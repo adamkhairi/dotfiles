@@ -38,7 +38,7 @@ from qtile_extras.widget.decorations import PowerLineDecoration
 
 # Show wlan status bar widget (set to False if wired network)
 # show_wlan = True
-show_wlan = False
+show_wlan = True
 
 # Show bluetooth status bar widget
 # show_bluetooth = True
@@ -62,7 +62,7 @@ platform = int(os.popen("cat /sys/class/dmi/id/chassis_type").read())
 # Set default apps
 # --------------------------------------------------------
 
-terminal = "alacritty"        
+terminal = "kitty"        
 
 # --------------------------------------------------------
 # Keybindings
@@ -115,7 +115,7 @@ keys = [
 
     # Apps
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
-    Key([mod, "control"], "Return", lazy.spawn("rofi -show drun"), desc="Launch Rofi"),
+    Key([mod],"d", lazy.spawn("rofi -show drun"), desc="Launch Rofi"),
     Key([mod], "b", lazy.spawn("bash " + home + "/.config/ml4w/settings/browser.sh"), desc="Launch Browser"),
     Key([mod, "shift"], "w", lazy.spawn(home + "/.config/qtile/scripts/wallpaper.sh"), desc="Update Theme and Wallpaper"),
     Key([mod, "control"], "w", lazy.spawn(home + "/.config/qtile/scripts/wallpaper.sh select"), desc="Select Theme and Wallpaper"),
